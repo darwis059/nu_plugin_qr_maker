@@ -6,10 +6,9 @@ impl nu_plugin::Plugin for QrPlugin {
     fn commands(&self) -> Vec<Box<dyn nu_plugin::PluginCommand<Plugin = Self>>> {
         vec![Box::new(ToQr::new())]
     }
-}
-
-fn version(&self) -> String {
-    env!("CARGO_PKG_VERSION").into()
+    fn version(&self) -> String {
+        env!("CARGO_PKG_VERSION").into()
+    }
 }
 
 fn main() {
