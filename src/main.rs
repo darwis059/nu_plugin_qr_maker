@@ -8,7 +8,9 @@ impl nu_plugin::Plugin for QrPlugin {
     }
 }
 
-
+fn version(&self) -> String {
+    env!("CARGO_PKG_VERSION").into()
+}
 
 fn main() {
     nu_plugin::serve_plugin(&mut QrPlugin {}, nu_plugin::MsgPackSerializer {})
